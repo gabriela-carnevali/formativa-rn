@@ -21,7 +21,7 @@ const musicasMock = [
     nota: "9/10",
   },
 ];
-// passar Route como parâmetro para uso dos parametros de rota
+// passar route como parâmetro para uso dos parametros de rota
 export default function ListaScreen() {
   const [itensSalvos, setItensSalvos] = useState(musicasMock);
 
