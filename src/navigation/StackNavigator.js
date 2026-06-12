@@ -1,3 +1,5 @@
+// Gabriela Carnevali Gonçalves Lima
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import DetalheScreen from "../screens/DetalheScreen";

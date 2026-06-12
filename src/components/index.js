@@ -1,3 +1,4 @@
+// Gabriela Carnevali Gonçalves Lima
 // Exportacoes centralizadas dos componentes (barrel export)
 
 import { BotaoAcao, CardMusica } from '../components';

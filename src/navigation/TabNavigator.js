@@ -1,3 +1,5 @@
+// Gabriela Carnevali Gonçalves Lima
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import ListaScreen from "../screens/ListaScreen";

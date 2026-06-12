@@ -1,3 +1,5 @@
+// Gabriela Carnevali Gonçalves Lima
+
 import { useEffect, useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { CardMusica } from "../components";
