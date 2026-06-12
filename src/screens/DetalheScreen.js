@@ -1,5 +1,4 @@
-// TODO: importar useState — adicione a linha abaixo no topo:
-// import { useState } from 'react';
+import { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -8,6 +7,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
+
 
 // Dados de fallback — usados enquanto a navegacao nao estiver configurada
 const musicaMock = {
@@ -19,14 +20,10 @@ const musicaMock = {
     "Uma das composicoes mais iconicas do rock. Queen criou uma obra atemporal que mistura balada, opera e hard rock em uma unica faixa de seis minutos.",
 };
 
-// TODO: adicionar { route, navigation } como parametros quando a navegacao estiver configurada
-// Os dados chegam via route.params quando o usuario toca em uma musica na HomeScreen
-export default function DetalheScreen() {
-  // Defina os parametros de rota, pegando todos os campos presentes no objeto musicas definido na HomeScreen
-  // const { passar parametros das musicas: plataforma, nota etc... } = route?.params ?? musicaMock;
+export default function DetalheScreen({route, navigation}) {
+  const {titulo, genero, plataforma, nota, sinopse} = route?.params ?? musicaMock
+  const [isSalvo, setIsSalvo] = useState(false)
 
-  // TODO: estado booleano para controlar se a musica foi salva na lista
-  // const [isSalvo, setIsSalvo] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -55,12 +52,12 @@ export default function DetalheScreen() {
           <Text style={styles.detalheTexto}>{sinopse}</Text>
         </View>
 
-        {/* TODO: quando implementar o estado isSalvo, use:
-            onPress={() => setIsSalvo(prev => !prev)}
-            style={[styles.botao, isSalvo && styles.botaoAtivo]}
-            texto: isSalvo ? 'Remover da Lista' : 'Adicionar a Lista' */}
-        <TouchableOpacity style={styles.botao}>
-          <Text style={styles.botaoTexto}>Adicionar a Lista</Text>
+        <TouchableOpacity onPress={() =>
+          setIsSalvo((prev) => !prev)}
+          style={[styles.botao, isSalvo && styles.botaoAtivo]}
+        >
+          <Text style={[styles.botao, isSalvo && styles.botaoAtivo]}>
+          {isSalvo ? 'Remover da Lista' : 'Adicionar a Lista'}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
